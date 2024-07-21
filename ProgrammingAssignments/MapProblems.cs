@@ -10,7 +10,8 @@ namespace ProgrammingAssignments
     {
         public static int IsDictionary(List<string> A, string B= "nbpfhmirzqxsjwdoveuacykltg")
         {
-            var map = new Dictionary<char, int>();
+            var map = new SortedDictionary<char, int>();
+            
             var c = 0;
             foreach (var ch in B)
             {

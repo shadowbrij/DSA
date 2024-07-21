@@ -71,7 +71,6 @@ namespace ProgrammingAssignments.Heaps
 
         private int getLeftchildIndex(int parentIndex) { return 2 * parentIndex + 1; }
         private int getRightchildIndex(int parentIndex) { return 2 * parentIndex + 2; }
-        //private int getParentIndex(int childIndex) { return (childIndex - 1) / 2; }
         private bool hasLeftChild(int index) { return getLeftchildIndex(index) < this.size; }
 
         void Swap(List<int> A, int i, int j)

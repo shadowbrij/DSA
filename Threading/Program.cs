@@ -8,8 +8,15 @@ namespace Threading
     {
         static void Main(string[] args)
         {
+            int? ss = null;
+
+
             try
             {
+                if(ss == 2)
+                {
+                    Console.WriteLine("ss");
+                }
                 var cts = new CancellationTokenSource();
                 var token = cts.Token;
                 Task t_error = Task.Factory.StartNew(() =>

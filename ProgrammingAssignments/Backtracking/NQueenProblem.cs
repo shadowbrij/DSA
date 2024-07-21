@@ -24,35 +24,20 @@ namespace ProgrammingAssignments.Backtracking
             }
 
             column = new int[N];
-            int index = 0;
-            var rowFrom = index;
-
-
-            while (rowFrom < N)
-            {
-                if(PlaceNQueen(rowFrom, column))
-                {
-                    ans.Add(DeserializeCurrentAnswer());
-
-                }
-                column[index] += 1;
-                if(column[index] >= N)
-                {
-                    column[index] -= 1;
-                    index +=1;
-                    column[index] += 1;
-                }
-                rowFrom = index+1;
-            }
+            PlaceNQueen(0, column);
 
             return ans;
         }
 
-        bool PlaceNQueen(int row, int[] column)
+        void PlaceNQueen(int row, int[] column)
         {
             //base case; when we are done placing each queens.
             if(row == N)
-                   return true;
+            {
+                ans.Add(DeserializeCurrentAnswer());
+                return;
+
+            }
 
             //there is a Queen placed at `row` . check for possibilities of remaining queens.
             for(int col = 0; col < N; col++)
@@ -60,11 +45,12 @@ namespace ProgrammingAssignments.Backtracking
                 if (isValid(row,col,column))
                 {
                     column[row] = col;
-                    if(PlaceNQueen(row+1,column)) return true;
+                    //if(PlaceNQueen(row+1,column)) return true;
+                    PlaceNQueen(row + 1, column);
                     column[row] = -1;
                 }
             }
-            return false;
+            //return false;
 
         }
 

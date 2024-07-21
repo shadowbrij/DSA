@@ -349,5 +349,18 @@ namespace ProgrammingAssignments.Sorting
 
             return ans;
         }
+        public string convertToTitle(int A)
+        {
+            var sb = new StringBuilder();
+            while (A > 26)
+            {
+                var m = A % 26;
+                var ch = (Char)('A' + (m - 1));
+                sb.Append(ch.ToString());
+                A = A / 26;
+            }
+            sb.Append(((Char)('A' + A - 1)).ToString());
+            return sb.ToString().Reverse().ToString();
+        }
     }
 }
