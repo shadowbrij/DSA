@@ -40,7 +40,11 @@ namespace ProgrammingAssignments.ArraysProblems
         {
             // TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
 
-            string[] nq = Console.ReadLine().TrimEnd().Split(' ');
+            string? input = Console.ReadLine()?.TrimEnd();
+            if (input == null)
+                throw new InvalidOperationException("Input cannot be null.");
+                
+            string[] nq = input.Split(' ');
 
             int n = Convert.ToInt32(nq[0]);
 
@@ -50,7 +54,10 @@ namespace ProgrammingAssignments.ArraysProblems
 
             for (int i = 0; i < q; i++)
             {
-                queries.Add(Console.ReadLine().TrimEnd().Split(' ').ToList().Select(queriesTemp => Convert.ToInt32(queriesTemp)).ToList());
+                string? queryInput = Console.ReadLine()?.TrimEnd();
+                if (queryInput == null) break;
+                
+                queries.Add(queryInput.Split(' ').ToList().Select(queriesTemp => Convert.ToInt32(queriesTemp)).ToList());
             }
 
             List<int> result = dynamicArray(n, queries);

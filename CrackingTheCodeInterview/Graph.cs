@@ -119,16 +119,26 @@ namespace ConsoleApplication5
         static void hMain(String[] args)
         {
             int edgeweight = 6;
-            int query = Convert.ToInt32(Console.ReadLine());
+            string? queryInput = Console.ReadLine();
+            if (queryInput == null)
+                throw new InvalidOperationException("Input cannot be null.");
+            
+            int query = Convert.ToInt32(queryInput);
 
             for(int i=0;i<query;i++)
             {
-                int[] sizeofGraph = Array.ConvertAll(Console.ReadLine().Split(' '),Int32.Parse);
+                string? inputLine = Console.ReadLine();
+                if (inputLine == null)
+                    throw new InvalidOperationException("Input cannot be null.");
+                int[] sizeofGraph = Array.ConvertAll(inputLine.Split(' '), Int32.Parse);
                 int nodes = sizeofGraph[0], edges = sizeofGraph[1];
                 Graph graph = new Graph(nodes);
                 for (int j=0;j<edges;j++)
                 {
-                    var edge = Array.ConvertAll(Console.ReadLine().Split(' '), Int32.Parse);
+                    string? edgeInput = Console.ReadLine();
+                    if (edgeInput == null)
+                        throw new InvalidOperationException("Edge input cannot be null.");
+                    var edge = Array.ConvertAll(edgeInput.Split(' '), Int32.Parse);
                     graph.addEdge(edge[0], edge[1]);
                 }
                 int sourcenode = Convert.ToInt32(Console.ReadLine());

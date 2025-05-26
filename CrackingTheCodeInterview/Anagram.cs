@@ -11,8 +11,8 @@ namespace ConsoleApplication5
         static void MMain(String[] args)
         {
             //Task : Print a single integer denoting the number of characters you must delete to make the two strings anagrams of each other.
-            string str1 = Console.ReadLine();
-            string str2 = Console.ReadLine();
+            string str1 = Console.ReadLine() ?? string.Empty;
+            string str2 = Console.ReadLine() ?? string.Empty;
 
             int num = NumberNeededToDelete(str1, str2);
             Console.WriteLine(num);

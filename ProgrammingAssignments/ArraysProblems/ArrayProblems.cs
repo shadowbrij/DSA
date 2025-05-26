@@ -149,11 +149,22 @@ namespace ProgrammingAssignments.ArraysProblems
         }
         private static void Oddeven()
         {
-            int T = Convert.ToInt32(Console.ReadLine().Trim());
+            string? input = Console.ReadLine()?.Trim();
+            if (input == null)
+                throw new InvalidOperationException("Input cannot be null.");
+                
+            int T = Convert.ToInt32(input);
             for (int i = 0; i < T; i++)
             {
-                int N = Convert.ToInt32(Console.ReadLine().Trim());
-                int[] A = Array.ConvertAll(Console.ReadLine().Trim().Split(' '), int.Parse);
+                string? nInput = Console.ReadLine()?.Trim();
+                if (nInput == null) break;
+                
+                int N = Convert.ToInt32(nInput);
+                
+                string? arrayInput = Console.ReadLine()?.Trim();
+                if (arrayInput == null) break;
+                
+                int[] A = Array.ConvertAll(arrayInput.Split(' '), int.Parse);
                 var listofOdds = new List<int>();
                 var listofEvens = new List<int>();
 

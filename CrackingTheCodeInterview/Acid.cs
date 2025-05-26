@@ -50,10 +50,15 @@ namespace ConsoleApplication5
         }
         //static void Main(String[] args)
         //{
-        //    int n = Convert.ToInt32(Console.ReadLine());
+        //    string? input = Console.ReadLine();
+        //    if (input == null) return;
+        //    int n = Convert.ToInt32(input);
+        //    
         //    for (int a0 = 0; a0 < n; a0++)
         //    {
-        //        string acid_name = Console.ReadLine();
+        //        string? acid_name = Console.ReadLine();
+        //        if (acid_name == null) break;
+        //        
         //        string result = acidName(acid_name);
         //        Console.WriteLine(result);
         //    }

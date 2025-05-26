@@ -43,9 +43,12 @@ namespace ProgrammingAssignments.Greedy
     }
     public class JobComparer : IComparer<Job>
     {
-        public int Compare(Job i, Job j)
+        public int Compare(Job? i, Job? j)
         {
-            return j.EndTime - i.EndTime;
+            if (i == null && j == null) return 0;
+            if (i == null) return -1;
+            if (j == null) return 1;
+            return i.EndTime.CompareTo(j.EndTime);
         }
     }
 

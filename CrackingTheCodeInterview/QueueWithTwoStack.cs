@@ -18,10 +18,17 @@ namespace ThirtyDaysOfCode
         //static void Main(String[] args)
         //{
         //    /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution */
-        //    int queries = Convert.ToInt32(Console.ReadLine());
+        //    string? input = Console.ReadLine();
+        //    if (input == null)
+        //        throw new InvalidOperationException("Input cannot be null.");
+        //        
+        //    int queries = Convert.ToInt32(input);
         //    for (int i = 0; i < queries; i++)
         //    {
-        //        int[] type = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+        //        string? queryInput = Console.ReadLine();
+        //        if (queryInput == null) break;
+        //        
+        //        int[] type = Array.ConvertAll(queryInput.Split(' '), int.Parse);
         //        if (type[0] == 1) Enqueue(type[1]);
         //        else if (type[0] == 2) Dequeue();
         //        else if (type[0] == 3) PrintElement();

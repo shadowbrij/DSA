@@ -54,11 +54,18 @@ namespace ConsoleApplication5
         }
         static void Main(string[] args)
         {
-            int n = Convert.ToInt32(Console.ReadLine());
+            string? nInput = Console.ReadLine();
+            if (nInput == null)
+                throw new InvalidOperationException("Input cannot be null.");
+                
+            int n = Convert.ToInt32(nInput);
             Node tries = new Node();
             for (int a0 = 0; a0 < n; a0++)
             {
-                string[] tokens_op = Console.ReadLine().Split(' ');
+                string? input = Console.ReadLine();
+                if (input == null) break;
+                
+                string[] tokens_op = input.Split(' ');
                 string op = tokens_op[0];
                 string contact = tokens_op[1];
                 if (op == "add")
