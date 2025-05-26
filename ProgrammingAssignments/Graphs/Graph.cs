@@ -9,23 +9,16 @@ namespace ProgrammingAssignments.Graphs
 
     public class Graph
     {
-        public int nodes { get; set; }
         public Dictionary<int,Node> nodeLookup { get; set;}
         public Graph(int numberOfNodes)
         {
-            this.nodes = numberOfNodes;
             this.nodeLookup = new Dictionary<int, Node>();
-
-            //for (int i = 1; i <= this.nodes; i++)
-            //{
-            //    nodeLookup.Add(i,new Node(i));
-            //}
-            for (int i = 1; i <= this.nodes; i++)
+            for (int i = 1; i <= numberOfNodes; i++)
             {
                 nodeLookup.Add(i, new Node(i));
             }
-
         }
+
         public Node getNode(int value)
         {
             return nodeLookup[value];
@@ -74,5 +67,17 @@ namespace ProgrammingAssignments.Graphs
 
             return 0;
         }
+
+    public int dfsSum(int id, bool[] visited, int sum, List<int> B) {
+        visited[id] = true;
+        sum += B[id - 1];
+        foreach (var node in this.getNode(id).adjacents) {
+            if (!visited[node.id]) {
+                sum += dfsSum(node.id, visited, 0, B);
+            }
+        }
+        return sum;
+    }
+
     }
 }

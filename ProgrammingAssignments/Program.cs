@@ -15,6 +15,8 @@ using ProgrammingAssignments.DynamicProgramming;
 using ProgrammingAssignments.Graphs;
 using ProgrammingAssignments.ArraysProblems;
 using ProgrammingAssignments.Sorting;
+using ProgrammingAssignments.AnotherGraphs;
+using ProgrammingAssignments.HLD;
 
 namespace ProgrammingAssignments
 {
@@ -22,7 +24,26 @@ namespace ProgrammingAssignments
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(new ConsistentHashing().Hash("INDIA",11));
+            new ShortestDistInMaze().solve(new List<List<int>>()
+            {
+                new List<int>(){1,1,0,1},
+                new List<int>(){0,0,0,1},
+                new List<int>(){1,0,0,1},
+                new List<int>(){0,0,1,0}                
+            }
+            , new List<int>() { 1, 1 }, new List<int>() { 2, 1 });
+
+            new Dijkstra().solve(6,new List<List<int>>() { new List<int>() {0,4,9},
+                new List<int>() { 3,4,6},
+                new List<int>() { 1,2,1},
+                new List<int>() { 2,5,1},
+                new List<int>() { 2,4,5},
+                new List<int>() { 0,3,7},
+                new List<int>() { 0,1,1},
+                new List<int>() { 4,5,7},
+                new List<int>() { 0,5,1},
+                },4);
+
             new Divide().divide(-2147483648,-1);
             new NQueenProblem().solveNQueens(8);
             new MaxDistance().maximumGap(new List<int>(){-1,-1,2 });
