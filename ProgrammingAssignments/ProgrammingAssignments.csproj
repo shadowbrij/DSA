@@ -4,9 +4,7 @@
     <OutputType>Exe</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AssemblyTitle>ProgrammingAssignments</AssemblyTitle>
-    <Company>McGraw Hill Financial</Company>
     <Product>ProgrammingAssignments</Product>
-    <Copyright>Copyright © McGraw Hill Financial 2018</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
   </PropertyGroup>
