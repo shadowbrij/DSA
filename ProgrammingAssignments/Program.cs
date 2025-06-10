@@ -24,7 +24,9 @@ namespace ProgrammingAssignments
     {
         static void Main(string[] args)
         {
-
+            new ArticulationPoints().solve(2, new List<List<int>>() {
+                new List<int>() { 1, 2 }
+            });
             new Divide().divide(-2147483648,-1);
             new NQueenProblem().solveNQueens(8);
             new MaxDistance().maximumGap(new List<int>(){-1,-1,2 });
